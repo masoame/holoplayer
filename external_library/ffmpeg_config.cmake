@@ -1,5 +1,4 @@
 project(ffmpeg)
-message("Configuring ffmpeg" ${CMAKE_CURRENT_LIST_DIR})
 
 file(GLOB FFMPEG_PATH ${CMAKE_CURRENT_LIST_DIR}/ffmpeg*shared*)
 

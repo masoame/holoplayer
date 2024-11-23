@@ -1,19 +1,16 @@
-#include"ParseJson.h"
-
-#include<iostream>
-#include"ParseJson.h"
 #include<set>
 #include<Windows.h>
 #include<regex>
 #include<vector>
+
+#include<spdlog/spdlog.h>
+
+#include"ParseJson.h"
+
 namespace ParseJson
 {
 	namespace BiliBili
 	{
-
-
-		//网页清晰度表
-		std::map<std::string, std::pair<VideoQuality, std::vector<std::string>>> SupportedQualityMap;
 
 		//解析Bilibili的HTML页面
 		std::optional<std::pair<std::string, ::nlohmann::json>> ParseHTML(std::string_view bilibili_html_str) noexcept
@@ -33,7 +30,7 @@ namespace ParseJson
 			}
 			catch (...)
 			{
-				std::cout << "parse json failed please check json string" << std::endl;
+				spdlog::error("ParseHTML failed please check html string");
 				return std::nullopt;
 			}
 		}
@@ -50,7 +47,7 @@ namespace ParseJson
 			}
 			catch (...)
 			{
-				std::cout << "GetSuportedQualities failed please check json string" << std::endl;
+				spdlog::error("GetSuportedQualities failed please check json string");
 				return {};
 			}
 		}
@@ -71,7 +68,7 @@ namespace ParseJson
 				return supported_video_codecs;
 			}catch (...)
 			{
-				std::cout << "GetSuportedVideoCodecs failed please check json string" << std::endl;
+				spdlog::error("GetSuportedVideoCodecs failed please check json string");
 				return {};
 			}
 			
@@ -89,7 +86,7 @@ namespace ParseJson
 			}
 			catch (...)
 			{
-				std::cout << "GetSuportedAudioCodecs failed please check json string" << std::endl;
+				spdlog::error("GetSuportedAudioCodecs failed please check json string");
 				return {};
 			}
 		}
@@ -144,7 +141,7 @@ namespace ParseJson
 		}
 		catch (...)
 		{
-			std::cout << "parse json failed please check json string" << std::endl;
+			spdlog::error("ParseYouTube failed please check html string");
 			return {};
 		}
 	}

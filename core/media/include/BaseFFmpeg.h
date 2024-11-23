@@ -26,7 +26,7 @@ extern"C"
 #include<functional>
 #include<semaphore>
 #include<thread>
-
+#include<chrono>
 namespace FFmpegLayer
 {
 	using namespace std::chrono_literals;

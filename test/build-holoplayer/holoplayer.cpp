@@ -1,6 +1,5 @@
 #include<QApplication>
 #include "holomainwindow.h"
-
 int main(int argc, char* args[])
 {
     QApplication app(argc, args);

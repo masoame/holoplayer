@@ -62,10 +62,7 @@ namespace SpiderVideo
 			return { _curl_easy_setopt_ex(std::forward<Args>(option_tuple))... };
 		}
 
-
-
-
-		//inline bool _curl_easy_setopt_ex(auto... option_list) {
+		//inline bool _curl_easy_setopt_list(std::any& option_list) {
 		//	for (auto option : option_list) {
 		//		if (this->_curl_easy_setopt(option.first, option.second)!= CURLE_OK) return false;
 		//	}

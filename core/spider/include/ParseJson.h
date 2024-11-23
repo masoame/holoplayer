@@ -38,5 +38,7 @@ namespace ParseJson
 
 		extern std::pair<std::string, std::string> GetDownloadUrl(Data& data_map) noexcept;
 
+		////网页清晰度表
+		//extern std::map<std::string, std::pair<VideoQuality, std::vector<std::string>>> SupportedQualityMap;
 	}
 }
